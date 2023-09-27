@@ -9,6 +9,7 @@
         select * from mail where empno = #{param1}
     </select>
 
+
     <insert id="sendMail">
         insert into mail (content, date, empno, s_name, title)
         values(#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
@@ -25,5 +26,11 @@
     <select id="selectMailDetail" resultType="com.example.prsample.dto.MailDto">
         select * from mail where id=#{param1}
     </select>
+
+    <delete id="mailDelete">
+        delete from mail where id=#{param1}
+    </delete>
+
+
 
 </mapper>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        /* 스타일 수정을 위한 CSS */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -35,6 +34,8 @@
     </style>
 </head>
 <body>
+
+<form action="/mailDelete" method="get">
 <table border="1">
     <thead>
     <tr>
@@ -53,11 +54,20 @@
         <td th:text="${mail.content}"></td>
         <td><a th:text="${mail.title}"></a></td>
         <td th:text="${#temporals.format(mail.date, 'yyyy.MM.dd')}"></td>
-<!--        <td>-->
-<!--    <a th:href="@{'/mailList/' + ${mail.id}}"><input type="button" value="돌아가기"></a></td>-->
+        <th><input type="hidden" th:value="${mail.id}" name="id"></th>
+        <input type="hidden" th:value="${mail.empno}" name="empno" />
     </tr>
     </tbody>
+
 </table>
+    <input type="submit" value="삭제" onclick="closeMessage()">
+</form>
+<script>
+    function closeMessage() {
+        alert("삭제되었습니다.");
+    }
+</script>
 
 </body>
+
 </html>

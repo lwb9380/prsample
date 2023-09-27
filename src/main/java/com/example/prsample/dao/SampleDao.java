@@ -26,12 +26,5 @@ public interface SampleDao {
 
     public void updatelastday(String today, int empno);
 
-//    public List<MailDto> mailList(int empno);
-//
-//    public void sendMail(String content, LocalDateTime date, int empno, String sName, String title);
-//
-//    public List<Dept> selectDeptList();
-//
-//    public List<Dept> selectEmpnoList(String deptname);
 
 }
